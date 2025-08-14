@@ -219,7 +219,12 @@
 
     .header-title {
         padding: 20px 0;
-        height: 270px;
+        height: 180px;
+
+    }
+
+    .header-title h1 {
+        font-size: 25px ;
 
     }
 }

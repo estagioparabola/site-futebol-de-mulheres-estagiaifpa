@@ -90,9 +90,15 @@
     }
         .header-title2 {
         padding: 40px 0;
-        height: 280px;
+        height: 240px;
 
     }
+    .header-title2 h1 {
+    font-size:24px;
+}
+  #headermapa{
+    height: 280px;
+  }
 }
 
 .mensagem-flutuante {

@@ -216,6 +216,12 @@
     .rowDiferenca {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .header-title {
+        padding: 20px 0;
+        height: 270px;
+
+    }
 }
 
 @media (max-width: 600px) {

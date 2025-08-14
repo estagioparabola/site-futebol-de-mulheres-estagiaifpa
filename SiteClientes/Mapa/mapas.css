@@ -88,6 +88,11 @@
         height: auto;
         padding: 40px 0;
     }
+        .header-title2 {
+        padding: 40px 0;
+        height: 280px;
+
+    }
 }
 
 .mensagem-flutuante {

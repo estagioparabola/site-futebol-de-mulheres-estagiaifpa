@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../SiteClientes/ProAcademica/Artigos/ArtigEstilo.css">
+    <link rel="stylesheet" href="../../SiteClientes/estilo.css">
+    <link rel="stylesheet" href="../../SiteClientes/Informacoes/inforEstilo.css">
+    <title>Mapa Regional do Brasil</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../../Index.html">
+                    <img src="../../Logo/Instituto_Federal_do_Pará_-_Marca_Vertical_2015.svg" alt="Logo">
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="material-icons">menu</i>
+                </button>
+            </div>
+            <nav id="links-menu">
+                <ul class="nav-links">
+                    <li><a href="../../Index.html">PÁGINA PRINCIPAL</a></li>
+                    <li>
+                        <a class="titulo" href="#">PRODUÇÃO ACADÊMICA</a>
+                        <ul class="submenu">
+                            <li><a href="../../SiteClientes/ProAcademica/Artigos/artigos.html">REVISTA</a></li>
+                            <li><a href="../ProAcademica/Dissertacoes/dissertacao.html">MESTRADO</a></li>
+                            <li><a href="../ProAcademica/Doutorados/doutorado.html">DOUTORADO</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../Eventos/eventos.html">NOTÍCIAS</a></li>
+                    <li><a href="../Mapa/mapas.html">MAPA</a></li>
+                    <li class="active"><a href="info.html">SAIBA MAIS</a></li>
+                    <!-- <li><a href="sobre.html">CONTATO</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho 
+    <div class="header-title">
+        <div class="container">
+            <h1>O Futebol Feminino no Brasil</h1>
+            <p>Conheça a história, estatísticas e importância do futebol feminino no país</p>
+        </div>
+    </div>
+-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .timeline-wrapper {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .fundo {
+            padding-bottom: 30px;
+            background: repeating-linear-gradient(180deg,
+                    #71ee7b46 0px,
+                    #71ee7b4f 120px,
+                    #54b37056 120px,
+                    #54b37049 240px);
+
+        }
+
+        .footer {
+            margin-top: 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: 60px;
+            width: 4px;
+            background: linear-gradient(180deg, #059669 0%, #10b981 50%, #34d399 100%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 22px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: #ffffff;
+            border: 4px solid #10b981;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            z-index: 10;
+        }
+
+        .timeline-content {
+            margin-left: 70px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            width: 92%;
+        }
+
+        .timeline-content h3 {
+            font-size: 33px;
+            width: 60%;
+
+
+
+        }
+
+        .timeline-content p {
+            font-size: 25px;
+            text-align: justify;
+            width: 55%;
+            margin-bottom: 150px;
+        }
+
+        .timeline-content img {
+            position: absolute;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 350px;
+            width: 450px;
+            right: 10px;
+            top: 10px;
+            margin: 10px 10px 0 0;
+
+        }
+
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-8px) translateX(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: #10b981;
+        }
+
+        .year-tag {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #067751, #059669);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            letter-spacing: 0.5px;
+            text-shadow: #1f2937 4px 4px 10px;
+        }
+
+        .event-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .event-description {
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #059669, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .references-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .reference-link {
+            color: #10b981;
+            text-decoration: none;
+            padding: 12px 16px;
+            background: #f0fdf4;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            border-left: 4px solid #10b981;
+        }
+
+        .reference-link:hover {
+            background: #dcfce7;
+            transform: translateX(8px);
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-marker {
+                left: 12px;
+            }
+
+            .timeline-content {
+                margin-left: 50px;
+                padding: 20px;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
+                margin-bottom: 60px;
+            }
+
+            .timeline-content {
+                margin-left: 70px;
+                background: #ffffff;
+                border-radius: 16px;
+                padding: 28px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(16, 185, 129, 0.1);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+                width: 92%;
+            }
+
+            .timeline-content h3 {
+                font-size: 33px;
+                width: 100%;
+
+            }
+
+            .timeline-content p {
+                font-size: 25px;
+                text-align: justify;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .timeline-content img {
+                position: relative;
+                border-radius: 6px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                height: 250px;
+                width: 100%;
+
+
+            }
+        }
+    </style>
+    </head>
+
+
+
+    <!-- Futebol / Futsal -->
+    <div class="info-section">
+        <h2 class="section-title">⚽ Futebol / Futsal</h2>
+        <p>
+            Futebol e futsal compartilham a mesma essência do esporte, mas o futsal possui regras e
+            características próprias, como o tamanho reduzido de campo e a ênfase no controle de bola.
+            Verificar se ainda há relatos de preconceito com o futebol e futsal praticados por
+            mulheres e padrões determinados pela mídia, bem como avanços na divulgação do futebol e
+            futsal feminino, além de identificar quais motivações a sociedade oferece para a
+            prática dessas modalidades pelas mulheres.
+        </p>
+        <h3>🔗 Links úteis:</h3>
+        <ul>
+            <li><a href="https://diplomatique.org.br/as-transmissoes-do-futebol-de-mulheres-no-territorio-brasileiro/"
+                    target="_blank">As transmissões do futebol de mulheres – Le Monde Diplomatique</a></li>
+            <li><a href="https://epocanegocios.globo.com/futuro-do-trabalho/noticia/2023/08/menos-investimento-e-proibicao-os-desafios-enfrentados-pela-selecao-feminina-de-futebol-fora-de-campo.ghtml"
+                    target="_blank">Menos investimento e proibição – Época Negócios / BBC</a></li>
+            <li><a href="https://veja.abril.com.br/coluna/por-tras-dos-numeros/o-futebol-feminino-no-brasil-um-jogo-de-preconceitos-e-injusticas/"
+                    target="_blank">Um jogo de preconceitos e injustiças – VEJA</a></li>
+            <li><a href="https://agenciabrasil.ebc.com.br/esportes/noticia/2023-08/futsal-abre-portas-e-fomenta-o-futebol-de-meninas-e-mulheres-no-brasil/"
+                    target="_blank">Futsal abre portas e fomenta o futebol feminino – Agência Brasil</a></li>
+            <li><a href="https://revistamarieclaire.globo.com/amp/Mulheres-do-Mundo/noticia/2019/06/como-surgiu-o-futebol-feminino-no-brasil.html"
+                    target="_blank">Como surgiu o futebol feminino no Brasil?</a></li>
+            <li><a href="https://www.brasildefato.com.br/2019/06/13/futebol-feminino-surge-nos-anos-20-e-proibido-ate-79-e-enfrenta-ate-hoje-o-machismo/"
+                    target="_blank">Futebol feminino surge nos anos 20, é proibido até 79 e enfrenta até hoje o machismo
+                    - Brasil de Fato</a></li>
+            <li><a href="https://adiee.webnode.com.br/futebol%20de%20sal%C3%A3o%20feminino/" target="_blank"> Futebol de
+                    Salão Feminino. Um pouco sobre a história do Futsal Feminino no Brasil - ADIEE</a></li>
+            <li><a href="https://www.dicaseducacaofisica.info/pt-pt/futebol-de-salao-historia-regras/" target="_blank">
+                    Futebol de Salão: História e Regras Atuais - Dicas Educacao Fisica</a></li>
+            <li><a href="https://www.coladaweb.com/educacao-fisica/futsal" target="_blank">Futsal (Futebol de Salão):
+                    História, Regras e Fundamentos - Cola da Web</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Futebol da Mulher Indígena -->
+    <div class="info-section">
+        <h2 class="section-title">🛖 Futebol da Mulher Indígena</h2>
+        <p> A participação das mulheres indígenas no futebol tem crescido significativamente nos últimos anos,
+            impulsionada por diversas iniciativas locais e nacionais que valorizam a cultura e promovem a inclusão.
+            Essas ações têm como objetivo fortalecer o protagonismo feminino dentro das comunidades indígenas,
+            oferecendo não apenas o esporte como forma de lazer, mas também como ferramenta de empoderamento,
+            visibilidade e resistência cultural.</p>
+        <p> Além de estimular a prática esportiva, os projetos voltados ao futebol da mulher indígena contribuem
+            para romper estigmas, incentivar a igualdade de gênero e criar oportunidades de desenvolvimento social e
+            educacional para meninas e mulheres dessas comunidades.</p>
+        <h3>🔗 Links úteis:</h3>
+        <ul>
+            <li><a href="https://www.diadodesafio.org.br/para-inspirar/mulheres-indigenas-driblam-barreiras-e-fazem-gols-conheca-as-xondarias-guarani/?utm_source=chatgpt.com"
+                    target="_blank">Mulheres indígenas driblam barreiras e fazem gols – Xondarias Guarani</a></li>
+            <li><a href="https://amazoniareal.com.br/mulher-joga-futebol-a-superacao-das-indigenas-do-time-hiwy/?utm_source=chatgpt.com"
+                    target="_blank">
+                    Superação das indígenas do time Hiwy (Manaus – AM)</a></li>
+            <li><a href="https://www.institutoclaro.org.br/cidadania/nossas-novidades/videos/futebol-feminino-sob-o-olhar-da-mulher-indigena/?utm_source=chatgpt.com"
+                    target="_blank">Futebol feminino sob o olhar da mulher indígena – Instituto Claro</a></li>
+            <li><a href="https://www.uol.com.br/ecoa/reportagens-especiais/futebol-em-aldeia-vira-ferramenta-de-empoderamento-para-mulheres-guaranis/?utm_source=chatgpt.com"
+                    target="_blank">Futebol em aldeia de SP vira ferramenta de empoderamento – Ecoa/UOL</a></li>
+            <li><a href="https://www.inctfutebol.com.br/futeboldemulheresind%C3%ADgenalgbtqiaeparal%C3%ADmpico?utm_source=chatgpt.com"
+                    target="_blank">Futebol de mulheres indígenas, paralímpico e LGBTQIA+ – INCT Futebol</a></li>
+            <li><a href="https://imaginingequality.globalfundforwomen.org/content/guerreiras-project?utm_source=chatgpt.com"
+                    target="_blank">Guerreira Project – Imagining Equality (Global Fund for Women)</a></li>
+            <li><a href="https://museudofutebol.org.br/exposicoes/jaragua-kunhangue-ougaa-o-jogo-das-mulheres-do-jaragua/"
+                    target="_blank">Jaraguá Kunhangue Ouga’a – O jogo das mulheres do Jaraguá</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Competições Globais -->
+
+    </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="row-footer">
+                <div class="footer-col">
+                    <h3>Sobre Nós</h3>
+                    <p>Este portal é dedicado a promover e divulgar os estudos acadêmicos sobre o futebol, de
+                        mulheres
+                        indígenas e não indígenas, assim como a sua prática.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../../Index.html">Página Principal</a></li>
+                        <li><a href="../ProAcademica/Artigos/artigos.html">Artigos</a></li>
+                        <li><a href="../Eventos/eventos.html">Notícias</a></li>
+                        <li><a href="../Mapa/mapas.html">Mapa</a></li>
+                        <li><a href="../Informacoes/info.html">Saiba</a></li>
+                        <li><a href="../../login_admin/login.html">Painel Administrativo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Assine nossa newsletter e receba as últimas notícias diretamente no seu e-mail.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                        </div>
+                        <button type="submit" class="btn btn-warning">Assinar</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 - Brasil foi campeão da COPA AMÉRICA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão para voltar ao topo -->
+    <a href="#" class="back-to-top">
+        <span class="material-icons">arrow_upward</span>
+    </a>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+        // Menu mobile toggle
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const menu = document.getElementById('links-menu');
+            menu.classList.toggle('active');
+        });
+
+        // Smooth scroll para o botão "voltar ao topo"
+        document.querySelector('.back-to-top').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>

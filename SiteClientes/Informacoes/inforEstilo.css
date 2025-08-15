@@ -37,6 +37,12 @@ body {
     margin-bottom: 20px;
 }
 
+.row-title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
 .references-grid {
     display: grid;
     gap: 12px;

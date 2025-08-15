@@ -27,22 +27,27 @@
     max-height: 600px;
 }
 
-         svg circle:hover {
-                fill: #a51b0b;
-                border: #000000  6px solid;
-            }            
-            svg path:hover {
-                fill: #044068;
-            }
+svg circle:hover {
+    fill: #a51b0b;
+    border: #000000 6px solid;
+}
+
+svg path:hover {
+    fill: #044068;
+}
+
 /* Cabeçalho2 imfor mapa*/
 
 .header-title2 {
-    background: linear-gradient(rgba(133, 206, 138, 0.877), rgba(16, 75, 36, 0.685));;
+    background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
+    ;
     background-size: cover;
     background-position: bottom;
     color: rgb(255, 255, 255);
     padding: 80px 0;
     text-align: center;
+    margin: 0 55px;
+    border-radius: 22px;
 }
 
 .header-title2 h1 {
@@ -72,9 +77,9 @@
         margin: 20px 1rem;
     }
 
-    .mapa-section .mapa-logo {
-        width: 100%;
-        max-width: 300px;
+    .mapa-section .logo_pizza {
+        width: 119%;
+        max-width: 400px;
         height: auto;
 
     }
@@ -88,17 +93,22 @@
         height: auto;
         padding: 40px 0;
     }
-        .header-title2 {
+
+    .header-title2 {
         padding: 40px 0;
         height: 240px;
+        margin: 0 28px;
+        border-radius: 22px;
 
     }
+
     .header-title2 h1 {
-    font-size:24px;
-}
-  #headermapa{
-    height: 280px;
-  }
+        font-size: 24px;
+    }
+
+    #headermapa {
+        height: 400px;
+    }
 }
 
 .mensagem-flutuante {

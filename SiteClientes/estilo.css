@@ -175,6 +175,16 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.menu-toggle:focus,
+.menu-toggle:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 /* .container {
@@ -211,7 +221,7 @@ body {
 
 .carousel-caption {
     position: static;
-    background: rgba(30, 148, 113, 0.63);
+background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
     color: rgb(255, 255, 255);
     width: 100%;
     padding: 20px;
@@ -226,12 +236,19 @@ body {
     display: inline-block;
     position: absolute;
     padding: 8px 16px;
-    background-color: var(--secondary-color);
-    color: #ffffff;
+    background-color: #ffc107;
+    color: #000;
+    font-weight: 500;
     text-decoration: none;
     border-radius: 5px;
     bottom: 20px;
     right: 20px;
+}
+
+.btnn:hover {
+    background-color: #1d048d;
+    color:#fff;
+    text-decoration: none;
 }
 
 .carousel-indicators {
@@ -461,8 +478,6 @@ hr {
 
     .carousel-caption {
         position: static;
-        background: rgba(30, 148, 113, 0.63);
-        color: rgb(255, 255, 255);
         width: 100%;
         padding: 20px;
         text-align: center;
@@ -483,7 +498,7 @@ hr {
         left: 36%;
         transform: translateX(-50%);
         display: flex;
-        gap: 10px;
+        gap: 5%;
         z-index: 1;
     }
 
@@ -606,13 +621,14 @@ hr {
         font-size: 1.2rem;
         margin-top: 10px;
     }
+
     .jumbotron {
 
         height: 180px;
         padding: 50px 0;
-}
+    }
 
     .jumbotron h1 {
         font-size: 25px;
-}
+    }
 }

@@ -56,6 +56,7 @@ function renderEvents(eventos, totalCount) {
         const row = document.createElement('tr');
         
         row.innerHTML = `
+            <td>${evento.id}</td>
             <td>
                 <strong>${evento.titulo}</strong>
                 <div class="text-muted small">${formatDate(evento.data_inicio)}</div>

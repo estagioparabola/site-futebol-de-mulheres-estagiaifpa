@@ -33,13 +33,13 @@ async function handleSubmit(e) {
         titulo: document.getElementById('titulo').value.trim(),
         descricao: document.getElementById('descricao').value.trim(),
         data_inicio: document.getElementById('data_inicio').value,
-        data_fim: document.getElementById('data_fim').value || null,
+        // data_fim: document.getElementById('data_fim').value || null,
         local: document.getElementById('local').value.trim(),
-        endereco: document.getElementById('endereco').value.trim() || null,
+        // endereco: document.getElementById('endereco').value.trim() || null,
         imagem: document.getElementById('imagem').value || null,
         status: document.getElementById('status').value,
         link_inscricao: document.getElementById('link_inscricao').value.trim() || null,
-        categorias: getTags()
+        // categorias: getTags()
     };
     
     // Validar dados

@@ -34,6 +34,7 @@ async function CarregaArtigos() {
 
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td>${artigo.id}</td>
             <td>${artigo.titulo}</td>
             <td>${artigo.autor}</td>
             <td>${estado}</td>

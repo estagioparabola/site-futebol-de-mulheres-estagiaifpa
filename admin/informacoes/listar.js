@@ -30,6 +30,7 @@ async function carregarArtigos() {
     data.forEach(artigo => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
+            <td>${artigo.id}</td>
             <td>${artigo.titulo}</td>
             <td>${artigo.estado_uf}</td>
             <td>${artigo.tipo_pesquisa}</td>

@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${item.id}</td>
                 <td>${item.titulo}</td>
                 <td>${getCategoryName(item.categoria)}</td>
-                <td>${item.ativo ? '<span class="badge bg-success">Ativo</span>' : '<span class="badge bg-secondary">Inativo</span>'}</td>
                 <td>${item.descricao}</td>
                 <td><img src="${item.imagem_url}" alt="${item.titulo}" style="max-width: 80px; max-height: 40px; object-fit: cover;"></td>
+                <td>${item.ativo ? '<span class="badge bg-success">Ativo</span>' : '<span class="badge bg-secondary">Inativo</span>'}</td>
                 <td>
                     <div class="btn-group btn-group-sm">
                         <button class="btn btn-outline-primary edit-btn" data-id="${item.id}">

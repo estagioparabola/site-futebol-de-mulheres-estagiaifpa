@@ -62,7 +62,7 @@
     <main class="container">
         <!-- Filtros -->
         <div class="filters">
-            <input type="text" id="searchInput" placeholder="Pesquisar atletas...">
+    <!--        <input type="text" id="searchInput" placeholder="Pesquisar atletas...">
             <select id="positionFilter">
                 <option value="">Todas as posições</option>
                 <option value="Goleira">Goleira</option>
@@ -77,6 +77,7 @@
                 <option value="Flamengo">Flamengo</option>
                 <option value="Seleção Brasileira">Seleção Brasileira</option>
             </select>
+            -->
         </div>
 
         <!-- Lista de atletas -->
@@ -226,7 +227,7 @@
         }
 
         // Função para filtrar as atletas
-        function filterPlayers() {
+ /*       function filterPlayers() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const positionFilter = document.getElementById('positionFilter').value;
             const teamFilter = document.getElementById('teamFilter').value;
@@ -247,7 +248,7 @@
         document.getElementById('searchInput').addEventListener('input', filterPlayers);
         document.getElementById('positionFilter').addEventListener('change', filterPlayers);
         document.getElementById('teamFilter').addEventListener('change', filterPlayers);
-
+*/
         // Renderizar todas as atletas inicialmente
         renderPlayers(players);
     </script>

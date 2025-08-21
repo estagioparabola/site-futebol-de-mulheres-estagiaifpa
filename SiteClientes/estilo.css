@@ -305,7 +305,7 @@ background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
 
 .feature-box {
     padding: 30px 20px;
-    margin: 15px 0;
+    margin: 20px auto;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

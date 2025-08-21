@@ -179,14 +179,13 @@ body {
 }
 
 .player-image {
-    height: 300px;
+    height: 350px;
     overflow: hidden;
 }
 
 .player-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transition: transform 0.3s;
 }
 

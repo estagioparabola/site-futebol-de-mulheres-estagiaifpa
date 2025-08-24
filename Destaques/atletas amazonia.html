@@ -183,7 +183,8 @@
         });
 
         // Dados das atletas
-        const players = [                                                                                                                      {
+        const players = [
+                                                                                                                                  {
                 id: 1,
                 name: "Lucilene de Souza Marinho (Cebola)",
                 position: "Atacante",
@@ -191,6 +192,16 @@
                 achievements: "Lucilene de Souza Marinho, (Pará - Belém), mais conhecida como Cebola, é uma ex-futebolista brasileira que atuava como atacante e defendeu a Seleção Brasileira de Futebol Feminino no Torneio Experimental da China em 1988.",
                 image: src="../SiteClientes/img/unnamed-25.png",
                 birthdate: "",
+            },
+
+                                                                                                                                              {
+                id: 2,
+                name: "Ivanete Xerente",
+                position: "Meio de campo",
+                team: "",
+                achievements: "Ivanete Xerente foi a primeira indígena a assinar um contrato de atleta profissional em um time de futebol do país.",
+                image: src="../SiteClientes/Informacoes/img/ano2025.jpg",
+                birthdate: "14/11/2006",
             },
 
         ];
@@ -211,12 +222,12 @@
                         <h2>${player.name}</h2>
                         <div class="player-meta">
                             <span class="position">${player.position}</span>
-                            <span class="team">${player.team}</span>
+                            <!--<span class="team">${player.team}</span>-->
                         </div>
-                        <p class="player-bio">${player.bio}</p>
+                        <!--<p class="player-bio">${player.bio}</p>-->
                         <div class="player-details">
                             <p><strong>Nascimento:</strong> ${player.birthdate}</p>
-                            <p><strong>Conquistas:</strong> ${player.achievements}</p>
+                            <p><strong>Descrição:</strong> ${player.achievements}</p>
                         </div>
                     </div>
                 `;

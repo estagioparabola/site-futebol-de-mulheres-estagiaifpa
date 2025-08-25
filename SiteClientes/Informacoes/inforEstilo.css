@@ -247,6 +247,15 @@ body {
     color: #495057;
 }
 
+    .rowSalarial {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+        
+
+    }
+
 
 
 @media screen and (max-width: 768px) {

@@ -381,6 +381,10 @@ background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
     gap: 40px;
 }
 
+.row-footer p {
+    text-align: justify;
+}
+
 .footer a {
     color: white;
 }

@@ -181,11 +181,12 @@
                 <div class="col-md-4">
                     <h3>Newsletter</h3>
                     <p>Assine nossa newsletter e receba as últimas notícias diretamente no seu e-mail.</p>
-                    <form>
+                    <form id="id-do-form">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                            <input type="email" id="email" class="form-control" placeholder="seu@email.com">
                         </div>
                         <button type="submit" class="btn btn-warning">Assinar</button>
+                        <div id="message" class="message"></div>
                     </form>
                 </div>
 
@@ -293,7 +294,7 @@
         // Renderizar todas as atletas inicialmente
         renderPlayers(players);
     </script>
-
+    <script src="../assets/email.js"></script>
 
 </body>
 

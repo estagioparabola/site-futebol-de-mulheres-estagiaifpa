@@ -38,7 +38,7 @@
                             <li><a href="../Artigos/artigos.html">ARTIGO</a></li>
                             <li><a href="../Dissertacoes/dissertacao.html">MESTRADO</a></li>
                             <li><a href="doutorado.html">DOUTORADO</a></li>
-                            
+
                         </ul>
                     </li>
                     <li><a href="../../Eventos/eventos.html">NOTÍCIAS</a></li>
@@ -83,9 +83,12 @@
                     <p>Este portal é dedicado a promover e divulgar os estudos acadêmicos sobre o futebol, de mulheres
                         indígenas e não indígenas, assim como a sua prática.</p>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/para.bolaacadfutebol?rdid=vO9iWWQ9uvTS12h9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A7ETQFw2N%2F#"><i class="fab fa-facebook"></i></a>
+                        <a
+                            href="https://www.facebook.com/para.bolaacadfutebol?rdid=vO9iWWQ9uvTS12h9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A7ETQFw2N%2F#"><i
+                                class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/PARA.BOLA_ALDEIA.DO.FUTEBOL/#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/PARA.BOLA_ALDEIA.DO.FUTEBOL/#"><i
+                                class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -103,11 +106,12 @@
                 <div class="footer-col">
                     <h3>Newsletter</h3>
                     <p>Assine nossa newsletter e receba as últimas notícias diretamente no seu e-mail.</p>
-                    <form>
+                    <form id="id-do-form">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                            <input type="email" id="email" class="form-control" placeholder="seu@email.com">
                         </div>
                         <button type="submit" class="btn btn-warning">Assinar</button>
+                        <div id="message" class="message"></div>
                     </form>
                 </div>
             </div>
@@ -134,6 +138,7 @@
 
     <script type="module" src="../../../SiteClientes/ProAcademica/Doutorados/doutorado.js"></script>
     <script src="../../../assets/JS/supabase-client.js"></script>
+    <script src="../../../assets/email.js"></script>
 
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>

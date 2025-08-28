@@ -222,7 +222,7 @@ body {
 
 .carousel-caption {
     position: static;
-background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
+    background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
     color: rgb(255, 255, 255);
     width: 100%;
     padding: 20px;
@@ -248,7 +248,7 @@ background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
 
 .btnn:hover {
     background-color: #1d048d;
-    color:#fff;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -392,6 +392,26 @@ background: linear-gradient(rgb(10 14 10 / 88%), rgba(16, 75, 36, 0.685));
 .footer a:hover {
     color: #ffd700;
     text-decoration: none;
+}
+
+.message {
+    padding: 7px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #155724;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #721c24;
 }
 
 hr {

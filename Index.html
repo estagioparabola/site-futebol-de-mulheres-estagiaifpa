@@ -243,13 +243,16 @@
         });
 
         // Smooth scroll para o botão "voltar ao topo"
-        document.querySelector('.back-to-top').addEventListener('click', function (e) {
+        const backToTopButton = document.querySelector('.back-to-top');
+        if (backToTopButton) {
+        backToTopButton.addEventListener('click', function (e) {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
+    }
     </script>
 
     <script src="SiteClientes/carrossel.js"></script>

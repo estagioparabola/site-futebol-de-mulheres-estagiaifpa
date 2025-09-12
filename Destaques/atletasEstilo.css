@@ -249,20 +249,20 @@ body {
 }
 
 /* Rodapé */
-footer {
+/* footer {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 40px 0 20px;
-}
+} */
 
-.footer-content {
+/* .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
-}
+} */
 
-.footer-section {
+/* .footer-section {
     flex: 1;
     min-width: 250px;
     margin-bottom: 20px;
@@ -278,7 +278,7 @@ footer {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+} */
 
 /* Responsividade */
 @media (max-width: 768px) {

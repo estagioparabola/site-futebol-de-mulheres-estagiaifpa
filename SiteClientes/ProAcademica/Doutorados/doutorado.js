@@ -55,7 +55,7 @@ const mostrarArtigos = async (pagina) => {
 
             container.innerHTML += `
                 <div class="article-section" data-id="${artigo.id}">
-                    <p class="institution">${artigo.tipo_pesquisa || ''}</p>
+                    <p class="institution">${artigo.tipo='Tese'}</p>
                     <h3 class="article-title">${artigo.titulo.toLowerCase()}</h3>
                     <p class="institution">${artigo.instituto || ''}</p>
                     <p>${artigo.descricao}</p>

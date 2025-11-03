@@ -3,6 +3,12 @@ let currentPage = 1;
 const itemsPerPage = 8; // Número de artigos por página
 let totalArticles = 0;
 
+// Helper: capitaliza a primeira letra de uma string (retorna string vazia se falsy)
+function capitalizeFirst(str) {
+    if (!str) return '';
+    return String(str).charAt(0).toUpperCase() + String(str).slice(1);
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const { count } = await supabase
@@ -57,7 +63,7 @@ const MostraArtigos = async (page) => {
 
             activityList.innerHTML += `
         <div class="article-section" data-id="${artigoss.id}">
-            <p class="institution">${artigoss.tipo_pesquisa || ''}</p>
+            <p class="institution">${capitalizeFirst(artigoss.tipo_pesquisa || '')}</p>
             <h3 class="article-title">${artigoss.titulo.toLowerCase()}</h3>
             <p class="institution">${artigoss.instituto || ''}</p>
             <p>${artigoss.descricao}</p>

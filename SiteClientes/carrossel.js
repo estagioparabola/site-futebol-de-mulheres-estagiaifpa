@@ -1,11 +1,10 @@
-const supabase = window.supabase;
-
 document.addEventListener('DOMContentLoaded', () => {
     carregarCarrosselSite();
-});
+
+    const supabase = window.supabase;
 
 async function carregarCarrosselSite() {
-    const { data, error } = await supabase
+    const { data, error } = await window.supabase
         .from('carrossel_noticias')
         .select('*')
         .eq('ativo', true)
@@ -85,3 +84,5 @@ function inicializarCarrossel() {
         showSlide(currentIndex);
     }, 6000);
 }
+
+});
